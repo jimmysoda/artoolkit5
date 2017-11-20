@@ -186,9 +186,9 @@ public class ARToolKit {
             return false;
         }
 
-        debugImageData = new byte[frameWidth * frameHeight * 4];
-        debugImageColors = new int[frameWidth * frameHeight];
-        debugBitmap = Bitmap.createBitmap(frameWidth, frameHeight, Bitmap.Config.ARGB_8888);
+        debugImageData = new byte[videoWidth * videoHeight * 4];
+        debugImageColors = new int[videoWidth * videoHeight];
+        debugBitmap = Bitmap.createBitmap(videoWidth, videoHeight, Bitmap.Config.ARGB_8888);
 
         return true;
     }
