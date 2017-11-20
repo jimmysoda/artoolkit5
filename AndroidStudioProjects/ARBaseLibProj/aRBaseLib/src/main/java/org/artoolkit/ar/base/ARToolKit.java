@@ -346,7 +346,7 @@ public class ARToolKit {
      */
     public boolean convertAndDetect1(byte[] frame, int frameSize) {
 
-        if ((!isNativeInited()) || (frame == null)) {
+        if ((!initedNative) || (frame == null)) {
             return false;
         }
 
@@ -369,7 +369,7 @@ public class ARToolKit {
      */
     public boolean convertAndDetect2(ByteBuffer[] framePlanes, int[] framePlanePixelStrides, int[] framePlaneRowStrides) {
 
-        if ((!isNativeInited()) || (framePlanes == null)) {
+        if ((!initedNative) || (framePlanes == null)) {
             return false;
         }
 
