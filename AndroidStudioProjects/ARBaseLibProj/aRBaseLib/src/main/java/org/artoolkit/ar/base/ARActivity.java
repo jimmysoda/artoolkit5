@@ -90,6 +90,9 @@ public abstract class ARActivity extends /*AppCompat*/Activity implements Camera
      */
     protected final static String TAG = "ARBaseLib::ARActivity";
 
+    // Workaround for missing pixel format (see commit 47d5796)
+    private static String PIXEL_FORMAT = "YUV_420_888";
+
     /**
      * Renderer to use. This is provided by the subclass using {@link #supplyRenderer() Renderer()}.
      */
@@ -342,7 +345,7 @@ public abstract class ARActivity extends /*AppCompat*/Activity implements Camera
     @Override
     public void cameraPreviewStarted(int width, int height, int rate, int cameraIndex, boolean cameraIsFrontFacing) {
 
-        if (ARToolKit.getInstance().startWithPushedVideo(width, height, null, cameraIndex, cameraIsFrontFacing)) {
+        if (ARToolKit.getInstance().startWithPushedVideo(width, height, PIXEL_FORMAT, null, cameraIndex, cameraIsFrontFacing)) {
             // Expects Data to be already in the cache dir. This can be done with the AssetUnpacker.
             Log.i(TAG, "cameraPreviewStarted(): Camera initialised");
         } else {
