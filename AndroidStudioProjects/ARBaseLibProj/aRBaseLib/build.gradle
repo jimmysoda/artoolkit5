@@ -2,7 +2,8 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion = 25 // The version of the Android API, i.e. SDK, the app is compiled against
-    buildToolsVersion = "25.0.2" // The downloaded version of the Build Tools used to build Android application code
+    buildToolsVersion = '26.0.2'
+    // The downloaded version of the Build Tools used to build Android application code
 
     defaultConfig {
         minSdkVersion 15 // Signals the Google Play Store as to what device, running this minimum indicated or greater version, an app can be installed on
